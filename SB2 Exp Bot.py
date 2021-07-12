@@ -1,4 +1,5 @@
 import discord, asyncio, pytz, datetime
+import os
 
 client = discord.Client()
 
@@ -34,19 +35,7 @@ async def on_message(message):
                             TotalExp = TotalExp - 1
 
                         await message.channel.send ("[Lv {}]\nHP : {}\nNeed Exp : {}\nTotal Exp : {}".format(Lv, HP, EXP, TotalExp))
-                        
-                        """ 
-                        embed = discord.Embed(title="[Lv {}]".format(Lv),description="", timestamp=datetime.datetime.now(pytz.timezone("UTC")),color=0x00ff00)
-                        
-                        embed.add_field(name="HP : {}".format(HP))
-                        embed.add_field(name="Need Exp : {}".format(EXP))
-                        embed.add_field(name="Total Exp : {}".format(TotalExp))
-                        
-                        embed.set_footer(text="Bot Made By CyanicMoon")
-                        
-
-                        await message.channel.send (embed=embed)
-                        """
+                       
     
           
         
@@ -55,5 +44,5 @@ async def on_message(message):
 
 
 
-
-client.run('ODYzNjUyNDIxMjcxMTU4ODA1.YOqA_w.NEQxUifgFwedI5UMomrX2o8s1po')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
