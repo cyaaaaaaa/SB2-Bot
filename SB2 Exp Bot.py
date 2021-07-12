@@ -1,4 +1,4 @@
-import discord, asyncio, pytz, datetime
+import discord
 import os
 
 client = discord.Client()
